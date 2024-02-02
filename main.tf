@@ -1,6 +1,6 @@
 module "public_ip_address" {
   count              = var.public_ip_address == true ? 1 : 0
-  source             = "git::https://gitlab.devolab.cloud/m_cloud_lyon/az-module-tf/az_public-ip-address.git"
+  source             = "github.com/SebastienArthaud/az_public-ip-address.git"
   resourcegroup_name = var.resourcegroup_name
   ip_name            = var.ip_name == null ? "${var.network_interface_name}_public" : var.ip_name
 
